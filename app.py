@@ -14,7 +14,7 @@ def main():
         export_path = pathlib.Path(f"{args.date}-{table_name}.csv")
         export(db.rows(table_name), export_path)
 
-    for report in getattr(args, 'reports', []):
+    for report in getattr(args, "reports", []):
         cfg = config.report[report]
         stores = cfg.get("stores", [])
         for procedure in cfg.procedures:

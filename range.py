@@ -66,13 +66,15 @@ def expand(txt: str) -> Iterable[int]:
         sign, g = ("-", group[1:]) if group.startswith("-") else ("", group)
         r = g.split("-", 1)
         r[0] = "".join((sign, r[0]))
-        r = sorted(int(__) for __ in r)
+        r = sorted(map(int, r))
         return range(r[0], 1 + r[-1])
 
-    ranges = itertools.chain.from_iterable(range_expand(__) for __ in txt.split(","))
+    ranges = itertools.chain.from_iterable(map(range_expand, txt.split(",")))
     return sorted(set(ranges))
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     import doctest
+
     doctest.testmod()
 

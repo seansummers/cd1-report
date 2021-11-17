@@ -1,0 +1,44 @@
+--- # managed by hand atm
+invoice_balance_procedure_orders:
+- orders
+- transactions
+- user_plan
+- plans
+- users
+- order_report
+- exchanges
+- trips
+- invoice_balance_orders_report <prior>
+
+invoice_balance_procedure_subscriptions:
+- user_plan
+- subscription_transactions
+- users
+- plans
+- planPrices
+- invoice_balance_subscriptions_report <prior>
+
+xyz_calc_daily_store_driver_stats:
+- orders
+- exchanges
+- trips
+- users
+- cleaners
+- cleaner_daily_driver_stats_1902 <prior>
+
+abc_calc_daily_store_stats:
+- orders
+- transactions
+- subscription_transactions
+- cleaners
+- trips
+- exchanges
+- order_report
+- order_products
+- user_plan
+- plans
+- planPrices
+- users
+- user_primary_cleaners
+- cleaner_daily_driver_stats_1902 <prior>
+
