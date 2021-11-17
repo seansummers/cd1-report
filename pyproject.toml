@@ -3,7 +3,7 @@ requires = ["setuptools", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "scamperlaundry"
+name = "report"
 version = "attr:report.__meta__.__version__"
 description = "Scamperlaundry Reporting"
 authors = [

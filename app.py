@@ -8,6 +8,13 @@ from .fs import export
 
 def main():
     args = parse_args(config.report)
+    if args.generate_db:
+        print(config.generate_db())
+        raise SystemExit(0)
+    if args.generate_report:
+        print(config.generate_report())
+        raise SystemExit(0)
+
     db = DbEngine(config.db)
 
     for table_name in args.dump or []:

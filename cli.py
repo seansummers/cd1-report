@@ -56,11 +56,23 @@ def parse_args(report_cfg: Mapping[str, Any]) -> argparse.Namespace:
         nargs="*",
         choices=table_list,
     )
+    parser.add_argument(
+        "--generate-report",
+        help=f"Generate report.conf file.",
+        action="store_true",
+        default=False,
+    )
+    parser.add_argument(
+        "--generate-db",
+        help=f"Generate db.conf file.",
+        action="store_true",
+        default=False,
+    )
     args = parser.parse_args()
     if args.dump is not None:
         args = argparse.Namespace(date=args.date, dump=args.dump or table_list)
-    elif args.reports is None:
+    elif args.reports is None and not (args.generate_db or args.generate_report):
         parser.print_help()
-        raise SystemExit()
+        raise SystemExit(0)
     return args
 
