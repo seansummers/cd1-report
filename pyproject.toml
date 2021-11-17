@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "scamperlaundry"
+version = "attr:report.__meta__.__version__"
+description = "Scamperlaundry Reporting"
+authors = [
+    "Sean Summers <seansummers@gmail.com>"
+]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.7"
+]
+
+[options]
+install_requires = "file: requirements.txt"
+package_dir={""= "src"}
+
+[options.packages.find]
+where="src"
+
